@@ -1,0 +1,27 @@
+{
+  "easySentences": [
+    "The cat is rather mysterious",
+    "The dog is rather sporadic",
+    "The rabbit is quite adventurous",
+    "The horse is somewhat restless",
+    "The fish is unusually quiet",
+    "The parrot is rather talkative",
+    "The mouse is surprisingly brave"
+  ],
+  "mediumSentences": [
+    "The cat is rather mysterious and elusive, often disappearing for days at a time",
+    "The dog is rather sporadic in its behavior, sometimes playful and other times aloof",
+    "The rabbit is quite adventurous, always exploring new areas of the garden",
+    "The horse is somewhat restless, constantly pacing back and forth in its stall",
+    "The fish is unusually quiet, rarely making any noise or movement",
+    "The parrot is rather talkative, often mimicking the sounds it hears around it",
+    "The mouse is surprisingly brave, venturing out into the open despite the dangers"
+  ],
+  "hardSentences": [
+    "The narrative remains deliberately ambiguous and challenges the reader to infer meaning",
+    "The proposal appears intellectually ambitious and demands careful consideration from experts",
+    "The conversation became progressively more nuanced and required precise vocabulary",
+    "The technique seems deceptively simple but reveals deeper complexity upon closer inspection",
+    "The phenomenon continues to provoke intense debate among scholars and critics"
+  ]
+}
