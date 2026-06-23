@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Dropdown, Input } from 'antd';
+import { Button, Checkbox, Dropdown, Input } from 'antd';
 import english from './language-examples/english.json';
 import {
   PollyClient,
@@ -10,7 +10,7 @@ import {
   TextType,
   VoiceId,
 } from '@aws-sdk/client-polly';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 enum Difficulty {
   Easy = 'easy',
@@ -22,12 +22,7 @@ const { TextArea } = Input;
 
 const Home = () => {
   const [difficulty, setDifficulty] = useState(Difficulty.Easy);
-  /* const sentences = useMemo(() => {
-    if (difficulty === Difficulty.Easy) return english.easySentences;
-    if (difficulty === Difficulty.Medium) return english.mediumSentences;
-    return english.hardSentences;
-  }, [difficulty]); */
-
+  const [readDifficulty, setReadDifficulty] = useState(false);
   const [userAnswer, setUserAnswer] = useState('');
   const [currentSentence, setCurrentSentence] = useState('Some sentence to start with.');
   const [feedback, setFeedback] = useState('');
@@ -61,8 +56,9 @@ const Home = () => {
   };
 
   const readSentence = async () => {
+    const text = readDifficulty ? `${difficulty}: ${currentSentence}` : currentSentence;
     const command = new SynthesizeSpeechCommand({
-      Text: currentSentence,
+      Text: text,
       OutputFormat: OutputFormat.MP3,
       VoiceId: VoiceId.Joanna, // or e.g. VoiceId.Mathieu for French
       Engine: Engine.NEURAL, // neural sounds much better than standard
@@ -95,6 +91,15 @@ const Home = () => {
       <main className="w-full max-w-2xl mt-24">
         <div>
           <h1 className="text-2xl font-bold text-center">Write like a champ!</h1>
+        </div>
+        <div className="mt-4 flex justify-between items-center space-x-4">
+          <Checkbox
+            checked={readDifficulty}
+            onChange={(e) => setReadDifficulty(e.target.checked)}
+            className=""
+          >
+            Read difficulty level before sentence
+          </Checkbox>
           <Dropdown
             menu={{
               items: [
