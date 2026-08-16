@@ -9,21 +9,21 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@aws-sdk/client-polly": "^3.1075.0",
-    "antd": "^6.3.7",
+    "@aws-sdk/client-polly": "^3.1111.0",
+    "antd": "^6.6.0",
     "dotenv": "^17.4.2",
-    "next": "16.2.6",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^26",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.6",
+    "eslint": "^10",
+    "eslint-config-next": "16.3.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^7"
   }
 }
