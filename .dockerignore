@@ -1,0 +1,35 @@
+# Keep the Docker build context small and free of secrets / junk.
+# Anything listed here is NOT sent to the daemon as COPY input.
+
+# Reinstalled inside the image
+node_modules/
+
+# Rebuilt inside the image
+.next/
+out/
+build/
+
+# Secrets — pass NEXT_PUBLIC_* as build args instead of copying this file
+.env
+.env*
+
+# VCS, docs, editor
+.git/
+.gitignore
+*.md
+.vscode/
+.idea/
+.cursor/
+.DS_Store
+
+# Logs and caches
+npm-debug.log*
+*.tsbuildinfo
+
+# Docker files themselves are not needed inside the image
+Dockerfile*
+.dockerignore
+docker-compose*.yml
+docker-compose*.yaml
+compose.yml
+compose.yaml

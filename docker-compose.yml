@@ -1,0 +1,19 @@
+# Convenience wrapper around `docker build` + `docker run`.
+# Compose reads `.env` in this directory for ${...} substitution.
+#
+# Usage (from the project root):
+#   docker compose up --build
+#   docker compose down
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        # NEXT_PUBLIC_* must be build args — they are baked into the JS bundle.
+        NEXT_PUBLIC_AWS_ACCESS_KEY_ID: ${NEXT_PUBLIC_AWS_ACCESS_KEY_ID}
+        NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY: ${NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY}
+    ports:
+      # host:container — browser hits localhost:3000, forwarded into the container
+      - "3000:3000"
+    restart: unless-stopped
